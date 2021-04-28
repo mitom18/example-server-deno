@@ -1,0 +1,7 @@
+scripts:
+    start:
+        desc: Runs the program.
+        cmd: deno run --allow-net --allow-write --allow-read --allow-env --unstable app.ts
+    bundle:
+        desc: Builds single js file with all dependencies.
+        cmd: deno bundle --unstable app.ts bundle.js

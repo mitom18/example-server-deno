@@ -1,0 +1,7 @@
+{
+    "deno.enable": true,
+    "deno.unstable": true,
+    "deno.config": "./tsconfig.json",
+    "git.ignoreLimitWarning": true,
+    "editor.codeLens": false
+}
