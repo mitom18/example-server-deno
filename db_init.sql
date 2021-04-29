@@ -5,6 +5,7 @@ SET time_zone = "+00:00";
 
 
 CREATE DATABASE `example-server-deno` COLLATE utf8_unicode_ci;
+USE `example-server-deno`;
 
 
 CREATE TABLE `users` (
