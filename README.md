@@ -27,7 +27,7 @@ vr bundle
 # Run the production version
 vr start-bundle
 ```
-If you don't have Velociraptor installed, see scripts.yml for commands you need to run.
+If you don't have Velociraptor installed, see `scripts.yml` for commands you need to run.
 
 ## Built With
 
