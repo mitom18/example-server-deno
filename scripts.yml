@@ -5,3 +5,6 @@ scripts:
     bundle:
         desc: Builds single js file with all dependencies.
         cmd: deno bundle --unstable app.ts bundle.js
+    start-bundle:
+        desc: Runs the production bundle of the application.
+        cmd: deno run --allow-net --allow-write --allow-read --allow-env --unstable bundle.js
