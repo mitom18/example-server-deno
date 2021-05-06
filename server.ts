@@ -1,7 +1,11 @@
 import { Drash } from "./deps.ts";
 import { userRepository } from "./src/repositories/mod.ts";
 import { createUserService } from "./src/services/mod.ts";
-import { createUserResource } from "./src/resources/mod.ts";
+import {
+    createUserResource,
+    SessionResource,
+    SessionCurrentResource,
+} from "./src/resources/mod.ts";
 import response from "./src/utils/response.ts";
 import { appLogger } from "./src/utils/logger.ts";
 
@@ -15,6 +19,6 @@ Drash.Http.Response = response;
 export const server = new Drash.Http.Server({
     directory: ".",
     response_output: "application/json",
-    resources: [UserResource],
+    resources: [UserResource, SessionResource, SessionCurrentResource],
     logger: appLogger,
 });

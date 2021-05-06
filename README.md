@@ -8,10 +8,11 @@ Implementation of example backend application written in TypeScript powered by D
  - ORM
  - HTTP REST API
  - Logger
+ - Authentication
 
 ## Usage
 
-Application requires MySQL database. Ensure you have access to a MySQL database server. You can initialize the database with `db_init.sql` script.
+Application requires MySQL database. Ensure you have access to a MySQL database server. You can initialize the database with `db_init.sql` script. Database contains user with credentials `admin@admin.com` / `password`.
 
 To run this application, you'll need [Deno](https://deno.land/#installation) installed on your computer. Project is currently working with Deno in version 1.9.2.
 
@@ -35,6 +36,7 @@ If you don't have Velociraptor installed, see `scripts.yml` for commands you nee
  - [TypeScript](https://www.typescriptlang.org/)
  - [Drash](https://drash.land/drash/v1.x/#/)
  - [Cotton](https://rahmanfadhil.github.io/cotton/)
+ - [JWT](https://jwt.io/)
 
 ## Licence
 
