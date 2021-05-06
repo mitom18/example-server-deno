@@ -5,6 +5,10 @@ export class UserRepository extends BaseRepository<User> {
     constructor() {
         super(User);
     }
+
+    async getByEmail(email: string) {
+        return await this.getQueryBuilder().where("email", email).first();
+    }
 }
 
 export const userRepository = new UserRepository();

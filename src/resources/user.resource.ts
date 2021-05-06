@@ -1,8 +1,13 @@
 import { Drash, z } from "../../deps.ts";
 import { UserService } from "../services/mod.ts";
 import { User, UserRole } from "../model/mod.ts";
+import { AdminBaseResource } from "./mod.ts";
+import { jwtMiddleware } from "../middleware/mod.ts";
 
-export class UserResource extends Drash.Http.Resource {
+@Drash.Http.Middleware({
+    before_request: [jwtMiddleware],
+})
+export class UserResource extends AdminBaseResource {
     static paths = ["/users/:id?"];
 
     static userService: UserService;
