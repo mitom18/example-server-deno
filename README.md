@@ -27,8 +27,15 @@ vr bundle
 
 # Run the production version
 vr start-bundle
+
+# Compile the production version to executable binary
+vr compile-bundle
 ```
 If you don't have Velociraptor installed, see `scripts.yml` for commands you need to run.
+
+> **_IMPORTANT:_** `deno bundle` has currently problems with used Zod library, so you need to review the bundle before running or compiling it and replace every usage of `mod11` to `mod10`.
+
+> **_NOTE:_** `deno compile` is currently not supporting web workers, so bcrypt's functions must be used in their "sync" form in order to work. If you are not planning to compile the program, you can replace sync functions with their async/await versions that are using web workers.
 
 ## Built With
 
@@ -36,7 +43,9 @@ If you don't have Velociraptor installed, see `scripts.yml` for commands you nee
  - [TypeScript](https://www.typescriptlang.org/)
  - [Drash](https://drash.land/drash/v1.x/#/)
  - [Cotton](https://rahmanfadhil.github.io/cotton/)
+ - [Zod](https://github.com/colinhacks/zod)
  - [JWT](https://jwt.io/)
+ - [bcrypt](https://github.com/JamesBroadberry/deno-bcrypt)
 
 ## Licence
 

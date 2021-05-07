@@ -8,3 +8,6 @@ scripts:
     start-bundle:
         desc: Runs the production bundle of the application.
         cmd: deno run --allow-net --allow-write --allow-read --allow-env --unstable bundle.js
+    compile-bundle:
+        desc: Compiles the production bundle to executable binary.
+        cmd: deno compile --allow-net --allow-write --allow-read --allow-env --unstable --lite bundle.js
