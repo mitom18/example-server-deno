@@ -11,8 +11,7 @@ export class UserService {
     async add(user: User): Promise<User> {
         const dbUser = new User();
         dbUser.email = user.email;
-        // TODO change from hashSync to hash when deno compile supports web workers
-        dbUser.password = bcrypt.hashSync(user.password);
+        dbUser.password = await bcrypt.hash(user.password);
         dbUser.phone = user.phone;
         dbUser.role = user.role;
         return (await this.userRepository.save(dbUser)) as User;
@@ -42,8 +41,7 @@ export class UserService {
         if (!user) {
             return false;
         }
-        // TODO change from compareSync to compare when deno compile supports web workers
-        return bcrypt.compareSync(password, user.password);
+        return await bcrypt.compare(password, user.password);
     }
 }
 

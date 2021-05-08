@@ -5,6 +5,9 @@ scripts:
     bundle:
         desc: Builds single js file with all dependencies.
         cmd: deno bundle --unstable app.ts bundle.js
+    bundle-bcrypt-worker:
+        desc: Bundles the bcrypt worker. Needed by bundle to run smoothly, so that it does not need to compile ts file every time.
+        cmd: deno bundle --unstable https://deno.land/x/bcrypt@v0.2.4/src/worker.ts bcrypt-worker.js
     start-bundle:
         desc: Runs the production bundle of the application.
         cmd: deno run --allow-net --allow-write --allow-read --allow-env --unstable bundle.js

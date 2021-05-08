@@ -17,7 +17,6 @@ const UserResource = createUserResource(UserService);
 
 Drash.Http.Response = response;
 export const server = new Drash.Http.Server({
-    directory: ".",
     response_output: "application/json",
     resources: [UserResource, SessionResource, SessionCurrentResource],
     logger: appLogger,

@@ -1,4 +1,5 @@
 .env
 bundle.js
+bcrypt-worker.js
 *.log
 *.exe

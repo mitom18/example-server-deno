@@ -22,8 +22,11 @@ It is recommended to use [Velociraptor](https://deno.land/x/velociraptor@1.0.0-b
 # Run the app in development
 vr start
 
-# Build the production version
+# Build the production bundle
 vr bundle
+
+# Bundles the bcrypt worker file, so it can be used in app bundle
+vr bundle-bcrypt-worker
 
 # Run the production bundle
 vr start-bundle
@@ -35,9 +38,11 @@ If you don't have Velociraptor installed, see `scripts.yml` for commands you nee
 
 > **_IMPORTANT:_** `deno bundle` has currently problems with used Zod library, so you need to review the bundle before running or compiling it and replace every usage of `mod11` to `mod10`.
 
+> **_IMPORTANT:_** `deno bundle` is currently not able to bundle the bcrypt worker file, so you have to do it manually and then find worker.ts imports and replace them with local worker bundle imports before running in order to run smoothly.
+
 > **_IMPORTANT:_** When you run the bundle or the executable binary, ensure you have the proper `.env` file in the same directory as the bundle or the binary.
 
-> **_NOTE:_** `deno compile` is currently not supporting web workers, so bcrypt's functions must be used in their "sync" form in order to work. If you are not planning to compile the program, you can replace sync functions with their async/await versions that are using web workers.
+> **_IMPORTANT:_** `deno compile` is currently not supporting web workers, so bcrypt functions MUST be used in their "sync" form in order to work. If you are planning to compile the program, you must replace async/await bcrypt functions with their sync versions that are not using web workers. However, sync functions are blocking and have huge impact on performance. It is not recommended to use the compiled program, this option is here only as illustration for now.
 
 ## Built With
 

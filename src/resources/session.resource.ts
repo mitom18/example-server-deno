@@ -31,9 +31,4 @@ export class SessionResource extends Drash.Http.Resource {
         this.response.body = { jwt };
         return this.response;
     }
-
-    public async OPTIONS() {
-        this.response.status_code = 204;
-        return this.response;
-    }
 }

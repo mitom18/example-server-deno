@@ -28,7 +28,7 @@ export class UserResource extends AdminBaseResource {
         const createdUser = await UserResource.userService.add(user);
 
         this.response.status_code = 201;
-        this.response.body = JSON.stringify(createdUser);
+        this.response.body = createdUser;
         return this.response;
     }
 
@@ -71,6 +71,7 @@ export class UserResource extends AdminBaseResource {
 
     private async getUserFromBody(): Promise<User> {
         const userSchema = z.object({
+            id: z.number().optional(),
             email: z.string().email(),
             password: z.string(),
             phone: z.string(),
