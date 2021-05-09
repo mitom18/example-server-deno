@@ -2,4 +2,6 @@
 bundle.js
 bcrypt-worker.js
 *.log
-*.exe
+bundle-win.exe
+bundle-linux
+bundle-macos

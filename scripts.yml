@@ -11,6 +11,12 @@ scripts:
     start-bundle:
         desc: Runs the production bundle of the application.
         cmd: deno run --allow-net --allow-write --allow-read --allow-env --unstable bundle.js
-    compile-bundle:
-        desc: Compiles the production bundle to executable binary.
-        cmd: deno compile --allow-net --allow-write --allow-read --allow-env --unstable --lite bundle.js
+    compile-bundle-linux:
+        desc: Compiles the production bundle to Linux executable binary.
+        cmd: deno compile --allow-net --allow-write --allow-read --allow-env --unstable --lite --target x86_64-unknown-linux-gnu --output bundle-linux bundle.js
+    compile-bundle-win:
+        desc: Compiles the production bundle to Windows executable binary.
+        cmd: deno compile --allow-net --allow-write --allow-read --allow-env --unstable --lite --target x86_64-pc-windows-msvc --output bundle-win bundle.js
+    compile-bundle-macos:
+        desc: Compiles the production bundle to MacOS executable binary.
+        cmd: deno compile --allow-net --allow-write --allow-read --allow-env --unstable --lite --target x86_64-apple-darwin --output bundle-macos bundle.js
