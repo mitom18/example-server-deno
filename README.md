@@ -54,6 +54,10 @@ If you don't have Velociraptor installed, see `scripts.yml` for commands you nee
  - [JWT](https://jwt.io/)
  - [bcrypt](https://github.com/JamesBroadberry/deno-bcrypt)
 
+## Performance
+
+Performance tests and their results can be seen [here](https://github.com/mitom18/deno-vs-nodejs-autocannon#deno).
+
 ## Licence
 
 MIT
